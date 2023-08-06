@@ -1,4 +1,4 @@
-const apiKey = `AIzaSyAZdnIKGBcCPitlE2NMYX1fqURJ5wFOgEQ`;
+const apiKey = `AIzaSyBM1_C40cespNthMdFZHgn6-6VwZ8X4mlo`;
 const video_suggestion_url = `https://www.googleapis.com/youtube/v3/videos?`;
 const chanels_url = 'https://www.googleapis.com/youtube/v3/channels?'
 

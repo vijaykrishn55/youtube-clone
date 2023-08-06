@@ -55,7 +55,7 @@ playThisVid();
 const video_title = document.getElementById("title-stat");
 // const vid_stat = document.getElementById("desc-channel");
 
-const apiKey = `AIzaSyAZdnIKGBcCPitlE2NMYX1fqURJ5wFOgEQ`;
+const apiKey = `AIzaSyBM1_C40cespNthMdFZHgn6-6VwZ8X4mlo`;
 async function fixVideo() {
     // video_title.innerHTML = 
     let response = await fetch(`https://youtube.googleapis.com/youtube/v3/videos?part=snippet,contentDetails,statistics&id=${vid_id}&key=${apiKey}`);
