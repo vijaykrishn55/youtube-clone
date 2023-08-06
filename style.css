@@ -30,8 +30,10 @@ body{
     /* border: 2px solid white; */
     justify-content: space-between;
     align-items: center;
-    height: 8vh;    
+    height: 65px;;
     margin-inline: 2vw;
+    /* margin-top: 19px; */
+
 }
 .nav-start-items > button, .mic > button, .searchbox > button, .nav-end-logos-container > button{
     background-color: transparent;
@@ -213,20 +215,21 @@ body{
 
 /* --filter-section-- */
 .filters-container{
-    /* border: 2px solid white; */
-    height: 8vh;
+        /* border: 2px solid white; */
+        height: 52px;
     position: absolute;
     width: 84vw;
-    top: 8vh;
-    left: 15vw;
-    margin-left: auto;
-    color: var(--text-primary);
-    display: flex;
+    top: 70px;
+        left: 15vw;
+        margin-left: auto;
+        color: var(--text-primary);
+        display: flex;
 }
 .filters-container > #go-right-btn{
     background-color: transparent;
     border: none;
     padding: 10px;
+    cursor: pointer;
 }
 .filters{
     display: flex;
@@ -243,9 +246,11 @@ body{
     cursor: pointer;
     background-color: var(--dark-secondary);
     padding: 5px 10px;
-    border-radius: 5px;
+    border-radius: 15px;
     margin-inline: 2px;
     color: var(--text-primary);
+    height: 30px;
+    text-align: center;
 }
 .active-filter{
     background-color: var(--text-primary);
@@ -271,6 +276,8 @@ body{
     flex-wrap: wrap;
     padding-inline: 2vw;
     overflow-y: auto;
+    top: 115px;
+
 }
 .video-container > .videos > a{
     text-decoration: none;
