@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="youtube.css">
+</head>
+  <body>
+    <!-- ===Nav Start=== -->
+    <header>
+        <nav>
+            <div class="nav-container">
+                <div class="nav-start">
+                    
+                    <div class="nav-start-items">
+                        <button id="sidebar-toggle">
+                            <img src="NavBar/hamburger.png" alt="menu-button">
+                        </button>
+                        <a href="#"><img src="General/Youtube-white.png" alt="yt-logo"></a>
+                    </div>
+                    
+                </div>
+                <div class="nav-mid">
+                    <div class="search-box-mic-container">
+                        
+                        <div class="searchbox">
+                            <button class="search-box-btn">
+                                <input id="search-input" class="search-input" type="text" placeholder="Search">
+                                <img src="General/cross-white.png" alt="clear-field" hidden>
+                            </button>
+                            <button id="search-btn" class="search-btn">
+                                <img src="NavBar/search.png" alt="search-video-button">
+                            </button>
+                        </div>
+                        
+                        <div class="mic">
+                            <button>
+                                <img src="NavBar/mic.png" alt="search-with-voice">
+                            </button>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="nav-end">
+                    
+                    <div class="nav-end-logos-container">
+                        <button><img src="NavBar/create.png" alt="create"></button>
+                        <button><img src="NavBar/apps.png" alt="Our-apps"></button>
+                        <button><img src="NavBar/notifications.png" alt=""></button>
+                        <button><img class="user-logo" src="General/User-Avatar.png" alt="user-img"></button>
+                    </div>
+                    
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- ===Nav End=== -->
+    <!-- ===Video-Player Starts=== -->
+     <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+        <div id="player"></div>
+
+        <!-- <script>
+        //   // 2. This code loads the IFrame Player API code asynchronously.
+        //   var tag = document.createElement('script');
+    
+        //   tag.src = "https://www.youtube.com/iframe_api";
+        //   var firstScriptTag = document.getElementsByTagName('script')[0];
+        //   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    
+        //   // 3. This function creates an <iframe> (and YouTube player)
+        //   //    after the API code downloads.
+        //   function onYouTubeIframeAPIReady() {
+
+        // }
+        
+        // // 4. The API will call this function when the video player is ready.
+        // function onPlayerReady(event) {
+        //       event.target.playVideo();
+        //     }
+            
+        //     // 5. The API calls this function when the player's state changes.
+        //     //    The function indicates that when playing a video (state=1),
+        //     //    the player should play for six seconds and then stop.
+            
+        //     var player;
+        //     const title = document.title;
+        //     let arr =  title.split('@');
+        //     const vid_id = arr[1];
+        //     playThisVid(vid_id);
+        //     function playThisVid(){
+        //         console.log(vid_id);
+        //         player = new YT.Player('player', {
+        //             height: '390',
+        //             width: '640',
+        //             videoId: vid_id,
+        //             playerVars: {
+        //                 'playsinline': 1
+        //               },
+        //               events: {
+        //                   'onReady': onPlayerReady,
+                          
+        //               }
+        //           });
+        //     }
+        // Function to create the YouTube player
+        const title = document.title;
+        let arr = title.split('@');
+        var vid_id = arr[1];
+    
+ 
+  // Function to create and initialize the YouTube player
+  var player; // Define the player variable globally to be accessible by other functions.
+  function playThisVid() {
+    player = new YT.Player('player', {
+      height: '390',
+      width: '640',
+      videoId: vid_id,
+      playerVars: {
+        'playsinline': 1
+      },
+      events: {
+        'onReady': onPlayerReady
+      }
+    });
+  }
+ 
+  // Function to handle when the YouTube player is ready
+  function onPlayerReady(event) {
+    event.target.playVideo();
+  }
+ 
+ 
+  // 1. This code loads the IFrame Player API code asynchronously.
+  var tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/iframe_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    
+    
+            </script> -->
+    
+    <aside>
+        <!-- ===Filters Start=== -->
+        <section>
+    
+            <div id="filters-container" class="filters-container">
+                <div class="filters">
+                    <div class="filter-items active-filter">All</div>
+                    <div class="filter-items">Trending</div>
+                    <div class="filter-items">Java-Script</div>
+                    <div class="filter-items">Web-Devolopment</div>
+                    <div class="filter-items">Marvel</div>
+                    <div class="filter-items">BGMI</div>
+                    <div class="filter-items">Fifa</div>
+                    <div class="filter-items">Manchester-City</div>
+                    <div class="filter-items">C-W-H</div>
+                    <div class="filter-items">DC</div>
+                    <div class="filter-items">Arijit Singh</div>
+                    <div class="filter-items">Java</div>
+                    <div class="filter-items">Artificial-Intelligence</div>
+                    <div class="filter-items">Machine-Learning</div>
+                    <div class="filter-items">HCR2</div>
+                    <div class="filter-items">Country-Music</div>
+                    <div class="filter-items">Manchester-United</div>
+                    <div class="filter-items">Premire-League</div>
+                </div>
+        <button id="go-right-btn">
+            <img src="NavBar/leftBottom.png" alt="go-to-right">
+        </button>
+        </div>
+
+        
+    </section>
+    <!-- ===Filters End=== -->
+    
+    <!-- ===Video-Suggestions Start=== -->
+    <section>
+        <div id="video-container" class="video-container">
+            <div class="videos"></div><div class="videos"><a id="Y5BeWdODPqo" href="youtube.html?vid_id=@Y5BeWdODPqo">
+      <div class="thumbnail"><img style="border-radius:25px;" src="https://i.ytimg.com/vi/Y5BeWdODPqo/hqdefault.jpg" alt="thumbnail"></div>
+      <div class="title-chanel">
+      <div class="chanel-logo"><img src="https://yt3.ggpht.com/ytc/AOPolaT2Hgx7cT3RgylkVswiHuNPqjBdI6KVPtosb8U1eA=s88-c-k-c0x00ffffff-no-rj" alt="chanel-logo"></div>
+      <div class="video-title">JAILER - Official ShowCase | Superstar Rajinikanth | Sun Pictures | Anirudh | Nelson</div>
+      </div>
+      <div class="chanel-stat">
+      <div class="chanel-name">Sun TV</div>
+      <div>
+      <span class="view-count">13.16M |</span>
+      <span class="published">02-08-2023</span>
+      </div>
+      </div>
+      </a></div><div class="videos"><a id="AQEc4BwX6dk" href="youtube.html?vid_id=@AQEc4BwX6dk">
+      <div class="thumbnail"><img style="border-radius:25px;" src="https://i.ytimg.com/vi/AQEc4BwX6dk/hqdefault.jpg" alt="thumbnail"></div>
+      <div class="title-chanel">
+      <div class="chanel-logo"><img src="https://yt3.ggpht.com/y1F4EOGuP19nZcBlzcyCtnHiYhkAOPQiRxwKeaGrOjXarUZZjcx_heiDiC06_Qj6ERea_qWK9A=s88-c-k-c0x00ffffff-no-rj" alt="chanel-logo"></div>
+      <div class="video-title">Jawan: Zinda Banda Song |Shah Rukh Khan |Atlee |Anirudh |Nayanthara |Vijay Sethupathi |Deepika</div>
+      </div>
+      <div class="chanel-stat">
+      <div class="chanel-name">T-Series</div>
+      <div>
+      <span class="view-count">48.96M |</span>
+      <span class="published">31-07-2023</span>
+      </div>
+      </div>
+      </a></div><div class="videos"><a id="ebZ9wZcr0a4" href="youtube.html?vid_id=@ebZ9wZcr0a4">
+      <div class="thumbnail"><img style="border-radius:25px;" src="https://i.ytimg.com/vi/ebZ9wZcr0a4/hqdefault.jpg" alt="thumbnail"></div>
+      <div class="title-chanel">
+      <div class="chanel-logo"><img src="https://yt3.ggpht.com/xVlgMIR8lMvUpwl_wtVnzYKL46n9v3vK2pl3LJA9F5yguGx7Ca2n3QtlmzsUW2uivr8RLUtAkQ=s88-c-k-c0x00ffffff-no-rj" alt="chanel-logo"></div>
+      <div class="video-title">West Indies win with a thrilling last-ball finish | India tour of West Indies | JioCinema</div>
+      </div>
+      <div class="chanel-stat">
+      <div class="chanel-name">JioCinema</div>
+      <div>
+      <span class="view-count">1.02M |</span>
+      <span class="published">03-08-2023</span>
+      </div>
+      </div>
+      </a></div><div class="videos"><a id="pgEiBaF2mHA" href="youtube.html?vid_id=@pgEiBaF2mHA">
+      <div class="thumbnail"><img style="border-radius:25px;" src="https://i.ytimg.com/vi/pgEiBaF2mHA/hqdefault.jpg" alt="thumbnail"></div>
+      <div class="title-chanel">
+      <div class="chanel-logo"><img src="https://yt3.ggpht.com/zgMN9BuSQByG1SrpmLwcNB3MQhjDhS_pl9H1h7TaRievMfS4UpU7Z36j77z5_hnIW4N8uFX3NA=s88-c-k-c0x00ffffff-no-rj" alt="chanel-logo"></div>
+      <div class="video-title">Guns &amp; Gulaabs | Official Trailer | Raj &amp; DK | RajKummar, Dulquer, Adarsh, Gulshan | Aug 18</div>
+      </div>
+      <div class="chanel-stat">
+      <div class="chanel-name">Netflix India</div>
+      <div>
+      <span class="view-count">11.77M |</span>
+      <span class="published">02-08-2023</span>
+      </div>
+      </div>
+      </a></div><div class="videos"><a id="Y6ZKXqM7HNQ" href="youtube.html?vid_id=@Y6ZKXqM7HNQ">
+      <div class="thumbnail"><img style="border-radius:25px;" src="https://i.ytimg.com/vi/Y6ZKXqM7HNQ/hqdefault.jpg" alt="thumbnail"></div>
+      <div class="title-chanel">
+      <div class="chanel-logo"><img src="https://yt3.ggpht.com/e7-OgUuAgCdlWYPpjaAbXdrVR2MGhqW-DC5-QIU1RwDkT0c9KmfKEvREbEWUdNdzFi_b6woGQg=s88-c-k-c0x00ffffff-no-rj" alt="chanel-logo"></div>
+      <div class="video-title">OMG2 - Official Trailer | Akshay Kumar, Pankaj Tripathi, Yami Gautam | Amit Rai | In Theatres Aug 11</div>
+      </div>
+      <div class="chanel-stat">
+      <div class="chanel-name">Viacom18 Studios</div>
+      <div>
+      <span class="view-count">28.20M |</span>
+      <span class="published">03-08-2023</span>
+      </div>
+      </div>
+      </a></div><div class="videos"><a id="v0i2KyLzXzQ" href="youtube.html?vid_id=@v0i2KyLzXzQ">
+      <div class="thumbnail"><img style="border-radius:25px;" src="https://i.ytimg.com/vi/v0i2KyLzXzQ/hqdefault.jpg" alt="thumbnail"></div>
+      <div class="title-chanel">
+      <div class="chanel-logo"><img src="https://yt3.ggpht.com/9V21v6ZBVBSxfK0LMK3YgLatb4JRnw01RUmMbaFikIxUsDfn7juW2DwTTtvPKC0XhFBdu_EUXw=s88-c-k-c0x00ffffff-no-rj" alt="chanel-logo"></div>
+      <div class="video-title">Nee Chuttu Chuttu (Lyrical Video) | Skanda | Ram Pothineni, Sree Leela | Boyapati Sreenu | Thaman S</div>
+      </div>
+      <div class="chanel-stat">
+      <div class="chanel-name">Junglee Music Telugu</div>
+      <div>
+      <span class="view-count">7.55M |</span>
+      <span class="published">03-08-2023</span>
+      </div>
+      </div>
+      </a></div><div class="videos"><a id="bGJbgxxGti0" href="youtube.html?vid_id=@bGJbgxxGti0">
+      <div class="thumbnail"><img style="border-radius:25px;" src="https://i.ytimg.com/vi/bGJbgxxGti0/hqdefault.jpg" alt="thumbnail"></div>
+      <div class="title-chanel">
+      <div class="chanel-logo"><img src="https://yt3.ggpht.com/aqKoeR-beuMH87wXO45kA5V6BpS-StEYDPZTEpUcAV8CTrxCw7SJ4ptyQ8YZc8YhozPiOtoD=s88-c-k-c0x00ffffff-no-rj" alt="chanel-logo"></div>
+      <div class="video-title">🔴IND VS WI, 1st T20I: ढीलेपन में करारी हार, कौन है हार का जिम्मेदार ?</div>
+      </div>
+      <div class="chanel-stat">
+      <div class="chanel-name">Sports Tak</div>
+      <div>
+      <span class="view-count">343.24K |</span>
+      <span class="published">03-08-2023</span>
+      </div>
+      </div>
+      </a></div><div class="videos"><a id="cvBL442561U" href="youtube.html?vid_id=@cvBL442561U">
+      <div class="thumbnail"><img style="border-radius:25px;" src="https://i.ytimg.com/vi/cvBL442561U/hqdefault.jpg" alt="thumbnail"></div>
+      <div class="title-chanel">
+      <div class="chanel-logo"><img src="https://yt3.ggpht.com/XaqGMnnCPcBUj-sX9Z6-_6uYYvOtw5-7bFq2TKkSuIe-V4k78IH9fLGqM7CrDp6XP5rCTfsr=s88-c-k-c0x00ffffff-no-rj" alt="chanel-logo"></div>
+      <div class="video-title">Sheela Ki Saree Ep. 627 | FUNwithPRASAD | #funwithprasad</div>
+      </div>
+      <div class="chanel-stat">
+      <div class="chanel-name">FUNwithPRASAD</div>
+      <div>
+      <span class="view-count">721.98K |</span>
+      <span class="published">03-08-2023</span>
+      </div>
+      </div>
+      </a></div><div class="videos"><a id="4_uOV-BShiI" href="youtube.html?vid_id=@4_uOV-BShiI">
+      <div class="thumbnail"><img style="border-radius:25px;" src="https://i.ytimg.com/vi/4_uOV-BShiI/hqdefault.jpg" alt="thumbnail"></div>
+      <div class="title-chanel">
+      <div class="chanel-logo"><img src="https://yt3.ggpht.com/ytc/AOPolaQ1GeRmsiCjlLjqfhY2s_VL8Q425Unut8oeihWC=s88-c-k-c0x00ffffff-no-rj" alt="chanel-logo"></div>
+      <div class="video-title">ANUKUTTYയുടെ ഒരു ആഗ്രഹം സാധിച്ചുകൊടുത്തു || ഒരു കിടിലൻ മട്ടൺ ബിരിയാണി</div>
+      </div>
+      <div class="chanel-stat">
+      <div class="chanel-name">Lekshmi Nair</div>
+      <div>
+      <span class="view-count">327.06K |</span>
+      <span class="published">03-08-2023</span>
+      </div>
+      </div>
+      </a></div><div class="videos"><a id="2nK6WBcGPOw" href="youtube.html?vid_id=@2nK6WBcGPOw">
+      <div class="thumbnail"><img style="border-radius:25px;" src="https://i.ytimg.com/vi/2nK6WBcGPOw/hqdefault.jpg" alt="thumbnail"></div>
+      <div class="title-chanel">
+      <div class="chanel-logo"><img src="https://yt3.ggpht.com/5ozNNrQBUJY8TPt2BYo6fEL-07ilkWHVedWCGFjtvuHU0aYrg1Iop-LJvprodA1_9-MTv7G_YA=s88-c-k-c0x00ffffff-no-rj" alt="chanel-logo"></div>
+      <div class="video-title">Main Nikla Gaddi Leke | Gadar 2 | Sunny Deol, Ameesha P, Utkarsh| Mithoon, Udit N, Aditya N| Uttam S</div>
+      </div>
+      <div class="chanel-stat">
+      <div class="chanel-name">Zee Music Company</div>
+      <div>
+      <span class="view-count">12.61M |</span>
+      <span class="published">03-08-2023</span>
+      </div>
+      </div>
+      </a></div><div class="videos"><a id="RsM_HQezzxA" href="youtube.html?vid_id=@RsM_HQezzxA">
+      <div class="thumbnail"><img style="border-radius:25px;" src="https://i.ytimg.com/vi/RsM_HQezzxA/hqdefault.jpg" alt="thumbnail"></div>
+      <div class="title-chanel">
+      <div class="chanel-logo"><img src="https://yt3.ggpht.com/j-IbkIYzRUXM_IWUmLqIJwaJkyeY-L3w4eA3xtcUGbNOq2qqyUjXsk6JAUx4tw0YF3_RQPD79g=s88-c-k-c0x00ffffff-no-rj" alt="chanel-logo"></div>
+      <div class="video-title">Elvish Yadav Systumm Memes are Funny! 😂</div>
+      </div>
+      <div class="chanel-stat">
+      <div class="chanel-name">Thugesh Unfiltered</div>
+      <div>
+      <span class="view-count">961.08K |</span>
+      <span class="published">03-08-2023</span>
+      </div>
+      </div>
+      </a></div><div class="videos"><a id="3FN16DnRVFY" href="youtube.html?vid_id=@3FN16DnRVFY">
+      <div class="thumbnail"><img style="border-radius:25px;" src="https://i.ytimg.com/vi/3FN16DnRVFY/hqdefault.jpg" alt="thumbnail"></div>
+      <div class="title-chanel">
+      <div class="chanel-logo"><img src="https://yt3.ggpht.com/QhOVHhLgg5wFu4H4gA9qOVoavng-T2xoA62cXVV-dk-j8phnED3P8whca8CETo0GuAVhQgtO=s88-c-k-c0x00ffffff-no-rj" alt="chanel-logo"></div>
+      <div class="video-title">Mujhe Pyaar Hua Tha Last Episode | Digitally Presented by Surf Excel &amp; Glow &amp; Lovely (Eng Sub)</div>
+      </div>
+      <div class="chanel-stat">
+      <div class="chanel-name">ARY Digital HD</div>
+      <div>
+      <span class="view-count">10.04M |</span>
+      <span class="published">31-07-2023</span>
+      </div>
+      </div>
+      </a></div><div class="videos"><a id="3uFDgERY37U" href="youtube.html?vid_id=@3uFDgERY37U">
+      <div class="thumbnail"><img style="border-radius:25px;" src="https://i.ytimg.com/vi/3uFDgERY37U/hqdefault.jpg" alt="thumbnail"></div>
+      <div class="title-chanel">
+      <div class="chanel-logo"><img src="https://yt3.ggpht.com/ytc/AOPolaQWzOh53HsRz-BYtpP28KWEdzt4fXJan7Pt-VYTvA=s88-c-k-c0x00ffffff-no-rj" alt="chanel-logo"></div>
+      <div class="video-title">Maamannan - Nenjame Nenjame Video | Udhayanidhi Stalin | Vadivelu | A.R Rahman</div>
+      </div>
+      <div class="chanel-stat">
+      <div class="chanel-name">SonyMusicSouthVEVO</div>
+      <div>
+      <span class="view-count">234.47K |</span>
+      <span class="published">03-08-2023</span>
+      </div>
+      </div>
+      </a></div><div class="videos"><a id="cE0RlZ5mlmY" href="youtube.html?vid_id=@cE0RlZ5mlmY">
+      <div class="thumbnail"><img style="border-radius:25px;" src="https://i.ytimg.com/vi/cE0RlZ5mlmY/hqdefault.jpg" alt="thumbnail"></div>
+      <div class="title-chanel">
+      <div class="chanel-logo"><img src="https://yt3.ggpht.com/ytc/AOPolaRAnP99NzAZvqEqfCTWU7k9Y7J3RSNqqKC7I7tq0A=s88-c-k-c0x00ffffff-no-rj" alt="chanel-logo"></div>
+      <div class="video-title">Buying Super Car Prank on My Team | जब गाडी देखी तो सबके होश उड़ गए😂</div>
+      </div>
+      <div class="chanel-stat">
+      <div class="chanel-name">Crazy XYZ</div>
+      <div>
+      <span class="view-count">3.58M |</span>
+      <span class="published">02-08-2023</span>
+      </div>
+      </div>
+      </a></div><div class="videos"><a id="RBPVaBAQE-w" href="youtube.html?vid_id=@RBPVaBAQE-w">
+      <div class="thumbnail"><img style="border-radius:25px;" src="https://i.ytimg.com/vi/RBPVaBAQE-w/hqdefault.jpg" alt="thumbnail"></div>
+      <div class="title-chanel">
+      <div class="chanel-logo"><img src="https://yt3.ggpht.com/ytc/AOPolaQt-zLecnlDmH_oTiJtJ1O2whPlf6nFg4fG_XCDKw=s88-c-k-c0x00ffffff-no-rj" alt="chanel-logo"></div>
+      <div class="video-title">Systumm | The UK07 Rider X Elvish Yadav | Official Music Video | Sangam Vigyaanik | Dushyant Bhatli</div>
+      </div>
+      <div class="chanel-stat">
+      <div class="chanel-name">The UK07 Rider</div>
+      <div>
+      <span class="view-count">4.61M |</span>
+      <span class="published">01-08-2023</span>
+      </div>
+      </div>
+      </a></div><div class="videos"><a id="ahKLWVnnmUo" href="youtube.html?vid_id=@ahKLWVnnmUo">
+      <div class="thumbnail"><img style="border-radius:25px;" src="https://i.ytimg.com/vi/ahKLWVnnmUo/hqdefault.jpg" alt="thumbnail"></div>
+      <div class="title-chanel">
+      <div class="chanel-logo"><img src="https://yt3.ggpht.com/Oo1oyY19hiYWw4yokv7gQbz46E6K8sjoiFcOKU4FL0RrPdKrJPGQMZwcHFRSxhMTm4UxQrOG=s88-c-k-c0x00ffffff-no-rj" alt="chanel-logo"></div>
+      <div class="video-title">EMIWAY X SWAALINA | KUDI ( OFFICIAL VIDEO ) | MIHIR GULATI | NAMOH STUDIOS</div>
+      </div>
+      <div class="chanel-stat">
+      <div class="chanel-name">Namoh Studios</div>
+      <div>
+      <span class="view-count">5.17M |</span>
+      <span class="published">31-07-2023</span>
+      </div>
+      </div>
+      </a></div><div class="videos"><a id="dlC1tNsr-n8" href="youtube.html?vid_id=@dlC1tNsr-n8">
+      <div class="thumbnail"><img style="border-radius:25px;" src="https://i.ytimg.com/vi/dlC1tNsr-n8/hqdefault.jpg" alt="thumbnail"></div>
+      <div class="title-chanel">
+      <div class="chanel-logo"><img src="https://yt3.ggpht.com/ytc/AOPolaRwg-NogOj9BKpdMP4ThHrDaUBC-RPjW_JCn0bIiw=s88-c-k-c0x00ffffff-no-rj" alt="chanel-logo"></div>
+      <div class="video-title">DREAM GIRL 2 -OFFICIAL TRAILER | Ayushmann K | Ananya P | Ektaa K | Raaj S | In Cinemas 25th August</div>
+      </div>
+      <div class="chanel-stat">
+      <div class="chanel-name">BalajiMotionPictures</div>
+      <div>
+      <span class="view-count">26.25M |</span>
+      <span class="published">01-08-2023</span>
+      </div>
+      </div>
+      </a></div><div class="videos"><a id="DmLF7bcf4tg" href="youtube.html?vid_id=@DmLF7bcf4tg">
+      <div class="thumbnail"><img style="border-radius:25px;" src="https://i.ytimg.com/vi/DmLF7bcf4tg/hqdefault.jpg" alt="thumbnail"></div>
+      <div class="title-chanel">
+      <div class="chanel-logo"><img src="https://yt3.ggpht.com/0op3NrEEmhcR4jwkCnSNv4PWvHE6kj7He8C2aocxyLfx1Tx-hN1JwmxaUj5O626ooqnWSrCJ=s88-c-k-c0x00ffffff-no-rj" alt="chanel-logo"></div>
+      <div class="video-title">World’s First Gaming Phone Under ₹20,000 !</div>
+      </div>
+      <div class="chanel-stat">
+      <div class="chanel-name">Tech Burner</div>
+      <div>
+      <span class="view-count">1.25M |</span>
+      <span class="published">03-08-2023</span>
+      </div>
+      </div>
+      </a></div><div class="videos"><a id="dug56u8NN7g" href="youtube.html?vid_id=@dug56u8NN7g">
+      <div class="thumbnail"><img style="border-radius:25px;" src="https://i.ytimg.com/vi/dug56u8NN7g/hqdefault.jpg" alt="thumbnail"></div>
+      <div class="title-chanel">
+      <div class="chanel-logo"><img src="https://yt3.ggpht.com/fGvQjp1vAT1R4bAKTFLaSbdsfdYFDwAzVjeRVQeikH22bvHWsGULZdwIkpZXktcXZc5gFJuA3w=s88-c-k-c0x00ffffff-no-rj" alt="chanel-logo"></div>
+      <div class="video-title">Marvel Studios’ Loki Season 2 | Official Trailer | Disney+</div>
+      </div>
+      <div class="chanel-stat">
+      <div class="chanel-name">Marvel Entertainment</div>
+      <div>
+      <span class="view-count">12.03M |</span>
+      <span class="published">31-07-2023</span>
+      </div>
+      </div>
+      </a></div><div class="videos"><a id="YcDRw3-cysw" href="youtube.html?vid_id=@YcDRw3-cysw">
+      <div class="thumbnail"><img style="border-radius:25px;" src="https://i.ytimg.com/vi/YcDRw3-cysw/hqdefault.jpg" alt="thumbnail"></div>
+      <div class="title-chanel">
+      <div class="chanel-logo"><img src="https://yt3.ggpht.com/vF7VFn34Wk21mOz_ba9Pimma1b-zDxtQqXjgSezkbkpsAIC92pwF9_bIWtUMNWGJHbmZGysDcHc=s88-c-k-c0x00ffffff-no-rj" alt="chanel-logo"></div>
+      <div class="video-title">Udaariyaan PROMO: Harleen Legi Nehmat Aur Ekam Se Badla, Banayegi Alia Ko Apna Jariya</div>
+      </div>
+      <div class="chanel-stat">
+      <div class="chanel-name">pressnews tv</div>
+      <div>
+      <span class="view-count">119.08K |</span>
+      <span class="published">03-08-2023</span>
+      </div>
+      </div>
+      </a></div><div class="videos"><a id="7WkkdaEPgCE" href="youtube.html?vid_id=@7WkkdaEPgCE">
+      <div class="thumbnail"><img style="border-radius:25px;" src="https://i.ytimg.com/vi/7WkkdaEPgCE/hqdefault.jpg" alt="thumbnail"></div>
+      <div class="title-chanel">
+      <div class="chanel-logo"><img src="https://yt3.ggpht.com/f6BWKFJa-1DcnqCIqiGCqNl2daN4rSo21UogJbKcmPC6h_VkvlF3TQ1rF-I6hN66hZ6Dfjb-bA=s88-c-k-c0x00ffffff-no-rj" alt="chanel-logo"></div>
+      <div class="video-title">Piyush Ne New Drone Le Liya 😲</div>
+      </div>
+      <div class="chanel-stat">
+      <div class="chanel-name">Sourav Joshi Vlogs</div>
+      <div>
+      <span class="view-count">2.19M |</span>
+      <span class="published">04-08-2023</span>
+      </div>
+      </div>
+      </a></div><div class="videos"><a id="A-1cUUcs7_0" href="youtube.html?vid_id=@A-1cUUcs7_0">
+      <div class="thumbnail"><img style="border-radius:25px;" src="https://i.ytimg.com/vi/A-1cUUcs7_0/hqdefault.jpg" alt="thumbnail"></div>
+      <div class="title-chanel">
+      <div class="chanel-logo"><img src="https://yt3.ggpht.com/ytc/AOPolaSx4oFW6HbsCh3WyyvBBFf0gupvKKcnQJSZ98-0dg=s88-c-k-c0x00ffffff-no-rj" alt="chanel-logo"></div>
+      <div class="video-title">WOLF Teaser -Tamil | Prabhu Dheva, Vinoo Venketesh, Anasuya B, Raai Laxmi | Amrish | Anju K</div>
+      </div>
+      <div class="chanel-stat">
+      <div class="chanel-name">T-Series Tamil</div>
+      <div>
+      <span class="view-count">257.68K |</span>
+      <span class="published">03-08-2023</span>
+      </div>
+      </div>
+      </a></div><div class="videos"><a id="rlelv1LFQqk" href="youtube.html?vid_id=@rlelv1LFQqk">
+      <div class="thumbnail"><img style="border-radius:25px;" src="https://i.ytimg.com/vi/rlelv1LFQqk/hqdefault.jpg" alt="thumbnail"></div>
+      <div class="title-chanel">
+      <div class="chanel-logo"><img src="https://yt3.ggpht.com/ytc/AOPolaS-o-KgdEI-8MLbIKWLiIh0CV-PE1QijCNy8HCYEw=s88-c-k-c0x00ffffff-no-rj" alt="chanel-logo"></div>
+      <div class="video-title">Banglore വെച്ച് prank എടുത്തത്👊🏻ഇടിപൊട്ടി💥മണവാളൻ on fire🔥</div>
+      </div>
+      <div class="chanel-stat">
+      <div class="chanel-name">Manavalan Media</div>
+      <div>
+      <span class="view-count">105.37K |</span>
+      <span class="published">02-08-2023</span>
+      </div>
+      </div>
+      </a></div><div class="videos"><a id="nqbs85nmMWM" href="youtube.html?vid_id=@nqbs85nmMWM">
+      <div class="thumbnail"><img style="border-radius:25px;" src="https://i.ytimg.com/vi/nqbs85nmMWM/hqdefault.jpg" alt="thumbnail"></div>
+      <div class="title-chanel">
+      <div class="chanel-logo"><img src="https://yt3.ggpht.com/ytc/AOPolaRRmQP1YlArzlNZ8GZvOIKAJ20BiRjqArbE2I_e5A=s88-c-k-c0x00ffffff-no-rj" alt="chanel-logo"></div>
+      <div class="video-title">God Level Big Brain Plays in Among Us</div>
+      </div>
+      <div class="chanel-stat">
+      <div class="chanel-name">Live Insaan</div>
+      <div>
+      <span class="view-count">945.34K |</span>
+      <span class="published">02-08-2023</span>
+      </div>
+      </div>
+      </a></div><div class="videos"><a id="W0KKl4gEfeQ" href="youtube.html?vid_id=@W0KKl4gEfeQ">
+      <div class="thumbnail"><img style="border-radius:25px;" src="https://i.ytimg.com/vi/W0KKl4gEfeQ/hqdefault.jpg" alt="thumbnail"></div>
+      <div class="title-chanel">
+      <div class="chanel-logo"><img src="https://yt3.ggpht.com/ytc/AOPolaQ8ry0jBfxMTGSCge-Ac91xT45c3ur9Kw6IUH91=s88-c-k-c0x00ffffff-no-rj" alt="chanel-logo"></div>
+      <div class="video-title">Divija's 18th Birthday celebrations!!! II Ishmart Malayaja II Divija Prabhakar</div>
+      </div>
+      <div class="chanel-stat">
+      <div class="chanel-name">Ishmart Malayaja</div>
+      <div>
+      <span class="view-count">156.02K |</span>
+      <span class="published">03-08-2023</span>
+      </div>
+      </div>
+      </a></div><div class="videos"><a id="S9BcGKcCqAM" href="youtube.html?vid_id=@S9BcGKcCqAM">
+      <div class="thumbnail"><img style="border-radius:25px;" src="https://i.ytimg.com/vi/S9BcGKcCqAM/hqdefault.jpg" alt="thumbnail"></div>
+      <div class="title-chanel">
+      <div class="chanel-logo"><img src="https://yt3.ggpht.com/m8TXXuv9krYPmPXDWKrqdG0Tay96nIaWN4ZFbu2_ZM2KN_y_zwQa2x4eMx4zYl1PzikagfqWG_Q=s88-c-k-c0x00ffffff-no-rj" alt="chanel-logo"></div>
+      <div class="video-title">#Video - भांग के स्वाद | #Khesari Lal Yadav | शिल्पी राज | Bhang Ke Swad | Bolbam Bhojpuri Song 2023</div>
+      </div>
+      <div class="chanel-stat">
+      <div class="chanel-name">Wave Music</div>
+      <div>
+      <span class="view-count">3.48M |</span>
+      <span class="published">31-07-2023</span>
+      </div>
+      </div>
+      </a></div><div class="videos"><a id="diV-Psh2EOY" href="youtube.html?vid_id=@diV-Psh2EOY">
+      <div class="thumbnail"><img style="border-radius:25px;" src="https://i.ytimg.com/vi/diV-Psh2EOY/hqdefault.jpg" alt="thumbnail"></div>
+      <div class="title-chanel">
+      <div class="chanel-logo"><img src="https://yt3.ggpht.com/O1B3gQKkFQlhsr0w6R5fhbNMGhlVHcIS6q6wsIX35C4xW9akkOxj1tATDLQYPKBO8oxgq7Dj=s88-c-k-c0x00ffffff-no-rj" alt="chanel-logo"></div>
+      <div class="video-title">Ponni | 3rd to 5th August 2023 - Promo</div>
+      </div>
+      <div class="chanel-stat">
+      <div class="chanel-name">Vijay Television</div>
+      <div>
+      <span class="view-count">1.18M |</span>
+      <span class="published">03-08-2023</span>
+      </div>
+      </div>
+      </a></div><div class="videos"><a id="wYgaOmkNn1M" href="youtube.html?vid_id=@wYgaOmkNn1M">
+      <div class="thumbnail"><img style="border-radius:25px;" src="https://i.ytimg.com/vi/wYgaOmkNn1M/hqdefault.jpg" alt="thumbnail"></div>
+      <div class="title-chanel">
+      <div class="chanel-logo"><img src="https://yt3.ggpht.com/ytc/AOPolaRFcBQiJdHe6yYM8OYBuz9-Vk0i7B-_FP5GFh2UzA=s88-c-k-c0x00ffffff-no-rj-mo" alt="chanel-logo"></div>
+      <div class="video-title">THE BIGGEST MAFIA HOUSE ROBBERY | GTA 5 GAMEPLAY #152</div>
+      </div>
+      <div class="chanel-stat">
+      <div class="chanel-name">Techno Gamerz</div>
+      <div>
+      <span class="view-count">15.28M |</span>
+      <span class="published">29-07-2023</span>
+      </div>
+      </div>
+      </a></div><div class="videos"><a id="O27I_g_xqLI" href="youtube.html?vid_id=@O27I_g_xqLI">
+      <div class="thumbnail"><img style="border-radius:25px;" src="https://i.ytimg.com/vi/O27I_g_xqLI/hqdefault.jpg" alt="thumbnail"></div>
+      <div class="title-chanel">
+      <div class="chanel-logo"><img src="https://yt3.ggpht.com/ytc/AOPolaTX9oy0CzPZm0ztNU-r7lt7ElpCflGGPwqMynSj8w=s88-c-k-c0x00ffffff-no-rj" alt="chanel-logo"></div>
+      <div class="video-title">LEO - Glimpse of Antony Das | Thalapathy Vijay | Lokesh Kanagaraj | Anirudh Ravichander</div>
+      </div>
+      <div class="chanel-stat">
+      <div class="chanel-name">Sony Music South</div>
+      <div>
+      <span class="view-count">11.41M |</span>
+      <span class="published">29-07-2023</span>
+      </div>
+      </div>
+      </a></div><div class="videos"><a id="FaZB4KuOf8g" href="youtube.html?vid_id=@FaZB4KuOf8g">
+      <div class="thumbnail"><img style="border-radius:25px;" src="https://i.ytimg.com/vi/FaZB4KuOf8g/hqdefault.jpg" alt="thumbnail"></div>
+      <div class="title-chanel">
+      <div class="chanel-logo"><img src="https://yt3.ggpht.com/ytc/AOPolaRY7fUpAfwsGDPq3qYEYGxeHvs-O4oEi-ADmhjmew=s88-c-k-c0x00ffffff-no-rj" alt="chanel-logo"></div>
+      <div class="video-title">Jaladhara Pumpset Since 1962 – Official Trailer | Urvashi | Indrans | Wonderframes Filmland</div>
+      </div>
+      <div class="chanel-stat">
+      <div class="chanel-name">T-Series Malayalam</div>
+      <div>
+      <span class="view-count">305.80K |</span>
+      <span class="published">02-08-2023</span>
+      </div>
+      </div>
+      </a></div><div class="videos"><a id="UkWNAp7_f5s" href="youtube.html?vid_id=@UkWNAp7_f5s">
+      <div class="thumbnail"><img style="border-radius:25px;" src="https://i.ytimg.com/vi/UkWNAp7_f5s/hqdefault.jpg" alt="thumbnail"></div>
+      <div class="title-chanel">
+      <div class="chanel-logo"><img src="https://yt3.ggpht.com/z7ld-8fd6O1_TWOwzngpxqnkNfdyyQfm-Gk0PwOSzep3LFCCtzbUWKsNGPL6Spk4hWqHZUgk=s88-c-k-c0x00ffffff-no-rj" alt="chanel-logo"></div>
+      <div class="video-title">BEST TIPS FOR PASSING EXAMS</div>
+      </div>
+      <div class="chanel-stat">
+      <div class="chanel-name">Tanmay Bhat</div>
+      <div>
+      <span class="view-count">1.88M |</span>
+      <span class="published">01-08-2023</span>
+      </div>
+      </div>
+      </a></div><div class="videos"><a id="FreN2a9bUMQ" href="youtube.html?vid_id=@FreN2a9bUMQ">
+      <div class="thumbnail"><img style="border-radius:25px;" src="https://i.ytimg.com/vi/FreN2a9bUMQ/hqdefault.jpg" alt="thumbnail"></div>
+      <div class="title-chanel">
+      <div class="chanel-logo"><img src="https://yt3.ggpht.com/jBY4zm0dAQsm25bsFqpO-kjC_cJl5rHF5nqbQEMAG08FBZeYhGXsCwCV3QYdMbrWi7q5rRiTqw=s88-c-k-c0x00ffffff-no-rj" alt="chanel-logo"></div>
+      <div class="video-title">Matinee | Sanje Mele | Sathish Ninasam | Rachithaa Ram| Manohar Kaampalli| Poornachandra Thejaswi SV</div>
+      </div>
+      <div class="chanel-stat">
+      <div class="chanel-name">Anand Audio</div>
+      <div>
+      <span class="view-count">1.03M |</span>
+      <span class="published">03-08-2023</span>
+      </div>
+      </div>
+      </a></div><div class="videos"><a id="jWf0wjAzF7c" href="youtube.html?vid_id=@jWf0wjAzF7c">
+      <div class="thumbnail"><img style="border-radius:25px;" src="https://i.ytimg.com/vi/jWf0wjAzF7c/hqdefault.jpg" alt="thumbnail"></div>
+      <div class="title-chanel">
+      <div class="chanel-logo"><img src="https://yt3.ggpht.com/4bHxw4WIr90dOI1Pfa9dBXRoKxtJhPW0y0aUzx6wpd8hV1G5PJB6lh-iqGRi-Lab7U-8FfrQ6w=s88-c-k-c0x00ffffff-no-rj" alt="chanel-logo"></div>
+      <div class="video-title">A Half Day With Family ❤️ Special Recipe Rotisserie Chicken 🍗 | Suhana | Basheer Bashi | Mashura</div>
+      </div>
+      <div class="chanel-stat">
+      <div class="chanel-name">Suhana Basheer</div>
+      <div>
+      <span class="view-count">259.35K |</span>
+      <span class="published">03-08-2023</span>
+      </div>
+      </div>
+      </a></div><div class="videos"><a id="En9ETESbERQ" href="youtube.html?vid_id=@En9ETESbERQ">
+      <div class="thumbnail"><img style="border-radius:25px;" src="https://i.ytimg.com/vi/En9ETESbERQ/hqdefault.jpg" alt="thumbnail"></div>
+      <div class="title-chanel">
+      <div class="chanel-logo"><img src="https://yt3.ggpht.com/ytc/AOPolaRPQ7AX70YFgzKUuccBG1hENArZokm0BnG65bnqiw=s88-c-k-c0x00ffffff-no-rj" alt="chanel-logo"></div>
+      <div class="video-title">FAAD MAGICIAN- SPIT OR SWALLOW | RJ Abhinav</div>
+      </div>
+      <div class="chanel-stat">
+      <div class="chanel-name">RJ Abhinav</div>
+      <div>
+      <span class="view-count">58.89K |</span>
+      <span class="published">03-08-2023</span>
+      </div>
+      </div>
+      </a></div><div class="videos"><a id="kTR7J6zsR-A" href="youtube.html?vid_id=@kTR7J6zsR-A">
+      <div class="thumbnail"><img style="border-radius:25px;" src="https://i.ytimg.com/vi/kTR7J6zsR-A/hqdefault.jpg" alt="thumbnail"></div>
+      <div class="title-chanel">
+      <div class="chanel-logo"><img src="https://yt3.ggpht.com/ytc/AOPolaQXd49A1d38hvDF_m8uxT9Mpcry81JI2qiVvjHYiQ=s88-c-k-c0x00ffffff-no-rj" alt="chanel-logo"></div>
+      <div class="video-title">राजस्थान पुलिस सम्पूर्ण जानकारी || Rajasthan Police Complete Information By Subhash Charan Sir</div>
+      </div>
+      <div class="chanel-stat">
+      <div class="chanel-name">Gk Subhash Charan</div>
+      <div>
+      <span class="view-count">69.36K |</span>
+      <span class="published">03-08-2023</span>
+      </div>
+      </div>
+      </a></div><div class="videos"><a id="jXDRxtr2-Xc" href="youtube.html?vid_id=@jXDRxtr2-Xc">
+      <div class="thumbnail"><img style="border-radius:25px;" src="https://i.ytimg.com/vi/jXDRxtr2-Xc/hqdefault.jpg" alt="thumbnail"></div>
+      <div class="title-chanel">
+      <div class="chanel-logo"><img src="https://yt3.ggpht.com/ytc/AOPolaQVNmPHKVNlsaL9ZJgpb81HmW_Ui2gJOS01_5Vi3Q=s88-c-k-c0x00ffffff-no-rj" alt="chanel-logo"></div>
+      <div class="video-title">JAILER SHOWCASE Reaction Video 🔥🔥 | Suryan FM | #jailer #jailershowcase #jailertrailer</div>
+      </div>
+      <div class="chanel-stat">
+      <div class="chanel-name">Suryan FM</div>
+      <div>
+      <span class="view-count">207.27K |</span>
+      <span class="published">02-08-2023</span>
+      </div>
+      </div>
+      </a></div><div class="videos"><a id="GIYBQY6oy4g" href="youtube.html?vid_id=@GIYBQY6oy4g">
+      <div class="thumbnail"><img style="border-radius:25px;" src="https://i.ytimg.com/vi/GIYBQY6oy4g/hqdefault.jpg" alt="thumbnail"></div>
+      <div class="title-chanel">
+      <div class="chanel-logo"><img src="https://yt3.ggpht.com/ytc/AOPolaSUbo3pAUxCrrdUuCPCudzdGGojUWLxJEg7bGSCOA=s88-c-k-c0x00ffffff-no-rj" alt="chanel-logo"></div>
+      <div class="video-title">Welcome to My First Podcast | Gulu Gulu Talks | Pearle Maaney</div>
+      </div>
+      <div class="chanel-stat">
+      <div class="chanel-name">Pearle Maaney</div>
+      <div>
+      <span class="view-count">298.50K |</span>
+      <span class="published">03-08-2023</span>
+      </div>
+      </div>
+      </a></div><div class="videos"><a id="BISs3d4wF3o" href="youtube.html?vid_id=@BISs3d4wF3o">
+      <div class="thumbnail"><img style="border-radius:25px;" src="https://i.ytimg.com/vi/BISs3d4wF3o/hqdefault.jpg" alt="thumbnail"></div>
+      <div class="title-chanel">
+      <div class="chanel-logo"><img src="https://yt3.ggpht.com/jYZ01sHmsTBTUKMrOkDC7hktO1MPFJJ_21UD1cri4k4iQotQJQuE-A0oSoz0z30cwUJjOoQRyS4=s88-c-k-c0x00ffffff-no-rj" alt="chanel-logo"></div>
+      <div class="video-title">Good News🤩🤰ఇప్పుడు నాకు ఎన్ని Months🤔?Final గా Reveal చేసేసాను🥳👨‍👩‍👧‍👦🥰</div>
+      </div>
+      <div class="chanel-stat">
+      <div class="chanel-name">rishiram 321 Vlogs</div>
+      <div>
+      <span class="view-count">505.68K |</span>
+      <span class="published">02-08-2023</span>
+      </div>
+      </div>
+      </a></div><div class="videos"><a id="doRfROqGnBY" href="youtube.html?vid_id=@doRfROqGnBY">
+      <div class="thumbnail"><img style="border-radius:25px;" src="https://i.ytimg.com/vi/doRfROqGnBY/hqdefault.jpg" alt="thumbnail"></div>
+      <div class="title-chanel">
+      <div class="chanel-logo"><img src="https://yt3.ggpht.com/5IhVZsdGrIyCwg3u0ro6MyX4zICtrUkaefm54ak7pm9RSbXCMI3xNkHb9FMULjvtC0LuXjUwF1g=s88-c-k-c0x00ffffff-no-rj" alt="chanel-logo"></div>
+      <div class="video-title">Pakistan से लौटकर Jetha पहुँचा Gokuldham Society| Taarak Mehta Ka Ooltah Chashmah|Jetha Chale Pardes</div>
+      </div>
+      <div class="chanel-stat">
+      <div class="chanel-name">LIV Comedy</div>
+      <div>
+      <span class="view-count">2.63M |</span>
+      <span class="published">31-07-2023</span>
+      </div>
+      </div>
+      </a></div><div class="videos"><a id="fPH0MFjCrEQ" href="youtube.html?vid_id=@fPH0MFjCrEQ">
+      <div class="thumbnail"><img style="border-radius:25px;" src="https://i.ytimg.com/vi/fPH0MFjCrEQ/hqdefault.jpg" alt="thumbnail"></div>
+      <div class="title-chanel">
+      <div class="chanel-logo"><img src="https://yt3.ggpht.com/oVsmC16JTq_xX1NV6NpRk2iqgEYBltxImgJ3m3yM8tl4QjRaZZzoMfUVimPC8fHrvnM2U7NOnQ=s88-c-k-c0x00ffffff-no-rj" alt="chanel-logo"></div>
+      <div class="video-title">Finally Met Abhishek in Bigg Boss</div>
+      </div>
+      <div class="chanel-stat">
+      <div class="chanel-name">Dimple Malhan Vlogs</div>
+      <div>
+      <span class="view-count">3.70M |</span>
+      <span class="published">01-08-2023</span>
+      </div>
+      </div>
+      </a></div><div class="videos"><a id="9qHfPvJKlCY" href="youtube.html?vid_id=@9qHfPvJKlCY">
+      <div class="thumbnail"><img style="border-radius:25px;" src="https://i.ytimg.com/vi/9qHfPvJKlCY/hqdefault.jpg" alt="thumbnail"></div>
+      <div class="title-chanel">
+      <div class="chanel-logo"><img src="https://yt3.ggpht.com/7xdDlQDwJI3diFD02n_B4Y3TUtxYGF2hgBh2LMilu6wyjTEhvWiprG9km5p_wFDmA2KYPbtT=s88-c-k-c0x00ffffff-no-rj" alt="chanel-logo"></div>
+      <div class="video-title">Premanand Baba: मुंबई से दुबई तक लाखों की नौकरी को ठोकर मारी फिर मिली राधारानी!</div>
+      </div>
+      <div class="chanel-stat">
+      <div class="chanel-name">MERO VRINDAVAN</div>
+      <div>
+      <span class="view-count">107.49K |</span>
+      <span class="published">03-08-2023</span>
+      </div>
+      </div>
+      </a></div><div class="videos"><a id="5ZIKY6xY6Vo" href="youtube.html?vid_id=@5ZIKY6xY6Vo">
+      <div class="thumbnail"><img style="border-radius:25px;" src="https://i.ytimg.com/vi/5ZIKY6xY6Vo/hqdefault.jpg" alt="thumbnail"></div>
+      <div class="title-chanel">
+      <div class="chanel-logo"><img src="https://yt3.ggpht.com/WrjDeIWr2pmRdCKFuEDfvkovr0O_o7gyfT_J_AMJjFk5KR9HGQVirOP0DeimyAoBUHRfH79X=s88-c-k-c0x00ffffff-no-rj" alt="chanel-logo"></div>
+      <div class="video-title">NEW! Taarak Mehta Ka Ooltah Chashmah | Ep 3840 | 3 Aug 2023 | Teaser</div>
+      </div>
+      <div class="chanel-stat">
+      <div class="chanel-name">Sony SAB</div>
+      <div>
+      <span class="view-count">1.43M |</span>
+      <span class="published">03-08-2023</span>
+      </div>
+      </div>
+      </a></div><div class="videos"><a id="k2hXPzFo0nc" href="youtube.html?vid_id=@k2hXPzFo0nc">
+      <div class="thumbnail"><img style="border-radius:25px;" src="https://i.ytimg.com/vi/k2hXPzFo0nc/hqdefault.jpg" alt="thumbnail"></div>
+      <div class="title-chanel">
+      <div class="chanel-logo"><img src="https://yt3.ggpht.com/ytc/AOPolaQTSrWijyFW904x6q5F70HZ-kWV5iXXOASWes9bqQ=s88-c-k-c0x00ffffff-no-rj" alt="chanel-logo"></div>
+      <div class="video-title">BIN TERE: Aditya Rikhari ft. Akash Thapa &amp; Somya Daundkar | New Hindi Song 2023 | Official Video</div>
+      </div>
+      <div class="chanel-stat">
+      <div class="chanel-name">Voilà! Digi</div>
+      <div>
+      <span class="view-count">621.82K |</span>
+      <span class="published">03-08-2023</span>
+      </div>
+      </div>
+      </a></div><div class="videos"><a id="utaky5y5Xvg" href="youtube.html?vid_id=@utaky5y5Xvg">
+      <div class="thumbnail"><img style="border-radius:25px;" src="https://i.ytimg.com/vi/utaky5y5Xvg/hqdefault.jpg" alt="thumbnail"></div>
+      <div class="title-chanel">
+      <div class="chanel-logo"><img src="https://yt3.ggpht.com/fRTh6Q0FUUZ50HFjtiUw_5DeDhQy87dhpUOdLzPySHsZXipNu3lpD4R9oxyKUzXY_DDUVPZB=s88-c-k-c0x00ffffff-no-rj" alt="chanel-logo"></div>
+      <div class="video-title">Broad's Fairytale Ending! | Highlights - England v Australia Day 5 | LV= Insurance Test 2023</div>
+      </div>
+      <div class="chanel-stat">
+      <div class="chanel-name">England &amp; Wales Cricket Board</div>
+      <div>
+      <span class="view-count">5.15M |</span>
+      <span class="published">31-07-2023</span>
+      </div>
+      </div>
+      </a></div><div class="videos"><a id="KJvHf1AP-Zo" href="youtube.html?vid_id=@KJvHf1AP-Zo">
+      <div class="thumbnail"><img style="border-radius:25px;" src="https://i.ytimg.com/vi/KJvHf1AP-Zo/hqdefault.jpg" alt="thumbnail"></div>
+      <div class="title-chanel">
+      <div class="chanel-logo"><img src="https://yt3.ggpht.com/qsuzLDGZ9P2lVK2RCmzYo78zWO8PtoaevySKQmQEnv874EXyq8CtwPn64n2T3grp6KXJSnOt=s88-c-k-c0x00ffffff-no-rj" alt="chanel-logo"></div>
+      <div class="video-title">Sirf Tum Episode 17 - [Eng Sub] - Anmol Baloch - Hamza Sohail - Mohsin Abbas Haider - 3rd Aug 2023</div>
+      </div>
+      <div class="chanel-stat">
+      <div class="chanel-name">HAR PAL GEO</div>
+      <div>
+      <span class="view-count">2.91M |</span>
+      <span class="published">03-08-2023</span>
+      </div>
+      </div>
+      </a></div><div class="videos"><a id="kAK8tIWjhSc" href="youtube.html?vid_id=@kAK8tIWjhSc">
+      <div class="thumbnail"><img style="border-radius:25px;" src="https://i.ytimg.com/vi/kAK8tIWjhSc/hqdefault.jpg" alt="thumbnail"></div>
+      <div class="title-chanel">
+      <div class="chanel-logo"><img src="https://yt3.ggpht.com/ytc/AOPolaRyOhbUS08hWshq2Bw4mF_MoooJxN30xSnf-ue5rw=s88-c-k-c0x00ffffff-no-rj" alt="chanel-logo"></div>
+      <div class="video-title">DANAV || दानव || Sumit Bhyan</div>
+      </div>
+      <div class="chanel-stat">
+      <div class="chanel-name">Sumit Bhyan</div>
+      <div>
+      <span class="view-count">92.78K |</span>
+      <span class="published">03-08-2023</span>
+      </div>
+      </div>
+      </a></div><div class="videos"><a id="v4hvJ9f2iuM" href="youtube.html?vid_id=@v4hvJ9f2iuM">
+      <div class="thumbnail"><img style="border-radius:25px;" src="https://i.ytimg.com/vi/v4hvJ9f2iuM/hqdefault.jpg" alt="thumbnail"></div>
+      <div class="title-chanel">
+      <div class="chanel-logo"><img src="https://yt3.ggpht.com/aqKoeR-beuMH87wXO45kA5V6BpS-StEYDPZTEpUcAV8CTrxCw7SJ4ptyQ8YZc8YhozPiOtoD=s88-c-k-c0x00ffffff-no-rj" alt="chanel-logo"></div>
+      <div class="video-title">🔴AAJ KA AGENDA: क्या ASIA CUP खेले बिना KL RAHUL और SHREYAS IYER WORLD CUP टीम में चुने जाएंगेे ?</div>
+      </div>
+      <div class="chanel-stat">
+      <div class="chanel-name">Sports Tak</div>
+      <div>
+      <span class="view-count">294.97K |</span>
+      <span class="published">02-08-2023</span>
+      </div>
+      </div>
+      </a></div><div class="videos"><a id="6UE93Xj7ikE" href="youtube.html?vid_id=@6UE93Xj7ikE">
+      <div class="thumbnail"><img style="border-radius:25px;" src="https://i.ytimg.com/vi/6UE93Xj7ikE/hqdefault.jpg" alt="thumbnail"></div>
+      <div class="title-chanel">
+      <div class="chanel-logo"><img src="https://yt3.ggpht.com/f6BWKFJa-1DcnqCIqiGCqNl2daN4rSo21UogJbKcmPC6h_VkvlF3TQ1rF-I6hN66hZ6Dfjb-bA=s88-c-k-c0x00ffffff-no-rj" alt="chanel-logo"></div>
+      <div class="video-title">Ye Kya Hogya Fortuner Ko 😲 Accident  K Baad</div>
+      </div>
+      <div class="chanel-stat">
+      <div class="chanel-name">Sourav Joshi Vlogs</div>
+      <div>
+      <span class="view-count">3.55M |</span>
+      <span class="published">03-08-2023</span>
+      </div>
+      </div>
+      </a></div><div class="videos"><a id="EY8BBVbaDik" href="youtube.html?vid_id=@EY8BBVbaDik">
+      <div class="thumbnail"><img style="border-radius:25px;" src="https://i.ytimg.com/vi/EY8BBVbaDik/hqdefault.jpg" alt="thumbnail"></div>
+      <div class="title-chanel">
+      <div class="chanel-logo"><img src="https://yt3.ggpht.com/O1B3gQKkFQlhsr0w6R5fhbNMGhlVHcIS6q6wsIX35C4xW9akkOxj1tATDLQYPKBO8oxgq7Dj=s88-c-k-c0x00ffffff-no-rj" alt="chanel-logo"></div>
+      <div class="video-title">Kaatrukkenna Veli | 4th &amp; 5th August 2023 - Promo</div>
+      </div>
+      <div class="chanel-stat">
+      <div class="chanel-name">Vijay Television</div>
+      <div>
+      <span class="view-count">956.84K |</span>
+      <span class="published">03-08-2023</span>
+      </div>
+      </div>
+      </a></div><div class="videos"><a id="vMuDfYQLPNA" href="youtube.html?vid_id=@vMuDfYQLPNA">
+      <div class="thumbnail"><img style="border-radius:25px;" src="https://i.ytimg.com/vi/vMuDfYQLPNA/hqdefault.jpg" alt="thumbnail"></div>
+      <div class="title-chanel">
+      <div class="chanel-logo"><img src="https://yt3.ggpht.com/O1B3gQKkFQlhsr0w6R5fhbNMGhlVHcIS6q6wsIX35C4xW9akkOxj1tATDLQYPKBO8oxgq7Dj=s88-c-k-c0x00ffffff-no-rj" alt="chanel-logo"></div>
+      <div class="video-title">Eeramaana Rojaave Season 2 | 3rd &amp; 4th August 2023 - Promo</div>
+      </div>
+      <div class="chanel-stat">
+      <div class="chanel-name">Vijay Television</div>
+      <div>
+      <span class="view-count">1.33M |</span>
+      <span class="published">03-08-2023</span>
+      </div>
+      </div>
+      </a></div></div>
+    </section>
+        <!-- ===Video-Suggestions End=== -->
+    </aside>
+    <!-- ===Right-Side Section End=== -->
+    
+    <!-- ===Video-Stat Start=== -->
+    <section>
+            <div id="title-stat" class="title-stat">
+                <!-- <div class="title">
+                            West Indies win with a thrilling last-ball finish | India tour of West Indies | JioCinema
+                        </div>
+                        <div class="stat">
+                            <div class="left-stat">
+                                <div>1125754 |</div>
+                                <div> 03-08-2023</div>
+                            </div>
+                            <div class="like-dislike">
+                                <div style=" padding-right: 5px; border-right: 1px solid #000000;" class="stat-items">
+                                    <div class="img">
+                                        <img src="Youtube/Button-Btn.png" alt="">
+                                    </div>
+                                    <div class="like"> 21077</div>
+                                </div>
+                
+                                <div style="margin-left: 10px;" class="stat-items">                        
+                                    <div class="img">
+                                            <img src="Youtube/Button-Btn-1.png" alt="">
+                                    </div>
+                                    <div></div>
+                                </div>
+                               
+                            </div>
+                            <div class="stat-item">
+                                <div class="img">
+                                    <img src="Youtube/Button-Btn-2.png" alt="">
+                                </div>
+                                <div>Save</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="img">
+                                    <img src="Youtube/Button-Btn-3.png" alt="">
+                                </div>
+                                <div>Share</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="img">
+                                    <img src="Youtube/Button-Btn-4.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="desc-channel" class="desc-channel">
+                            <div style="display: flex; justify-content: space-between; margin: 20px 0px;" class="ch-subs">
+                                <div style="display: flex;">
+                                    <div><img style="width: 30px; height: 30px; border-radius: 50%; margin-right: 1rem;" src="https://yt3.ggpht.com/xVlgMIR8lMvUpwl_wtVnzYKL46n9v3vK2pl3LJA9F5yguGx7Ca2n3QtlmzsUW2uivr8RLUtAkQ=s88-c-k-c0x00ffffff-no-rj" alt=""></div>
+                                    <div>
+                                        <div>JioCinema</div>
+                                        <div>4280000 Subscribers</div>
+                                    </div>
+                                </div>
+                                <div style="padding: 5px 25px; background-color: red; color: white; border-radius: 5px; display: flex; align-items:center ;">Subscribe</div>
+                            </div>
+                        <div id="desc-channel" class="desc-channel">
+                            <div class="desc">
+                                Winning the toss &amp; electing to bat, West Indies, thanks to power-packed efforts from skipper Rovman Powell &amp; maverick batter Nicholas Pooran, were able to guide the team to a competitive total of 149-6 after a shaky start thanks to the compact bowling performance of #TeamIndia.
+            
+            Chasing the target, India lost their openers early on before debutant Tilak Verma &amp; vice-captain Suryakumar Yadav consolidated to reset the team's course towards the target. A middle-order collapse towards the end thanks to some economical and clinical bowling by the Windies bowlers ensured that the latter win the game by 4 runs, thus taking a 1-0 lead in the 5-match series.
+            
+            Keep watching the action LIVE on #JioCinema in 11 languages for the first time!
+            
+            #SabJawaabMilenge #WIvIND
+            
+            📲 Download JioCinema: https://bit.ly/3Be09Z3 
+            🔵 Facebook: https://www.facebook.com/JioCinema 
+            📸 Instagram: https://www.instagram.com/officialjiocinema/ 
+            ✍ Twitter: https://twitter.com/JioCinema
+                            </div>
+                        </div></div> -->
+        </div>
+    </section>
+    <!-- ===Video-Stat End=== -->
+    
+    <!-- Comment-Reply Section Start -->
+    <section>
+        <div class="comment-stat">
+            <div>356 comments</div>
+            <div>
+                <img style="margin-right: 10px; margin-left: 15px;" src="Youtube/Group.png" alt="">
+                Sort By
+            </div>
+        </div>
+        <div class="your-cmnt">
+            <div style="width: 100%;">
+                <div style="width: 100%;">
+                    <img style="width: 40px; height: 40px; border-radius: 50%; margin-right: 1rem;" src="General/User-Avatar.png" alt="">
+                </div>
+                <div style="width: 100%;">
+                    <input style="background-color: transparent;padding: 7px; border: none; color: white; width: 85%; margin-left: 70px; outline:none;" type="text" placeholder="Add a comment here">
+                </div>
+            </div>
+        </div>
+        <div class="all-cmmnts">
+            <div id="comment-container">
+                
+            </div>
+        </div>
+    </section>
+    <!-- Comment-Reply Section End -->
+    <!-- ===Video-Player Ends=== -->
+   
+    <script src="youtube.js"></script>
+
+  </body>
+</html>
